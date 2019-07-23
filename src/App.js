@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import Form from './components/Form';
 import Titles from './components/Titles';
 import Weather from './components/Weather';
+import storageService from './components/services/storageService';
+
+import './App.css';
 
 const API_KYE = '8bf768353480692e06febb4c621734e9';
 // const url = `https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=${API_KYE}`;
@@ -71,14 +74,22 @@ export default class App extends Component {
       description: data.weather[0].description,
       base: data.base,
       error: ''
-    })
+    });
+    storageService.setItems(city, country);
+  }
+
+  componentDidMount() {
+    const [city, country] = storageService.getItems();
+    this.value1 = city;
+    this.value2 = country;
+    console.log('mount', this.value1);
   }
 
   render() {
     return (
-      <div>
+      <div className="app">
         <Titles></Titles>
-        <Form getWeather={this.getWeather}></Form>
+        <Form getWeather={this.getWeather} ></Form>
         <Weather {...this.state}></Weather>
       </div>
     )

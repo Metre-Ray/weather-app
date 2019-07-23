@@ -1,9 +1,9 @@
 import React from 'react';
-import './Titles.css';
+import styles from './Titles.module.css';
 
 const Titles = () => (
-  <div>
-    <h1>Weather finder</h1>
+  <div className={styles.titlesContainer}>
+    <h1>Weather search</h1>
     <p>Find out weather, temperature and other conditions</p>
   </div>
 );

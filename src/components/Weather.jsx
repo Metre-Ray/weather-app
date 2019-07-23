@@ -1,5 +1,5 @@
 import React from "react";
-import './Weather.css';
+import styles from './Weather.module.scss';
 
 const Weather = (props) => {
   const { temperature, humidity, pressure, city, country,
@@ -7,8 +7,8 @@ const Weather = (props) => {
   return (
     <div>
       { city && (
-      <React.Fragment>
-          <p>Location: {city}, {country}</p>
+        <React.Fragment>
+          <p className={styles.weather}>Location: {city}, {country}</p>
           <p>Coordinates: long: {longitude}, lat: {latitude}</p>
           <p>Temperature: {temperature}</p>
           <p>Humidity: {humidity}</p>
@@ -16,9 +16,9 @@ const Weather = (props) => {
           <p>Wind speed: {windSpeed}</p>
           <p>Conditions: {description}</p>
           <p><small>Data acquired from {base}</small></p>
-      </React.Fragment>
+        </React.Fragment>
       ) }
-      {error && <p>{error}</p>}
+      { error && <p>{error}</p> }
     </div>
   )
 }

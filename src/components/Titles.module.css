@@ -1,0 +1,5 @@
+.titlesContainer {
+  grid-column: 1 / 3;
+  padding: 5px;
+  background-color: rgb(51, 51, 51);
+}
