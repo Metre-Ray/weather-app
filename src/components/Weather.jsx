@@ -5,17 +5,17 @@ const Weather = (props) => {
   const { temperature, humidity, pressure, city, country,
     description, longitude, latitude, windSpeed, base, error } = props;
   return (
-    <div>
+    <div className={styles.weather}>
       { city && (
         <React.Fragment>
-          <p className={styles.weather}>Location: {city}, {country}</p>
-          <p>Coordinates: long: {longitude}, lat: {latitude}</p>
-          <p>Temperature: {temperature}</p>
-          <p>Humidity: {humidity}</p>
-          <p>Pressure: {pressure}</p>
-          <p>Wind speed: {windSpeed}</p>
-          <p>Conditions: {description}</p>
-          <p><small>Data acquired from {base}</small></p>
+          <p><span>Location:</span> {city}, {country}</p>
+          <p><span>Coordinates:</span> long: {longitude}, lat: {latitude}</p>
+          <p><span></span>Temperature: {temperature}</p>
+          <p><span></span>Humidity: {humidity}</p>
+          <p><span></span>Pressure: {pressure}</p>
+          <p><span></span>Wind speed: {windSpeed}</p>
+          <p><span></span>Conditions: {description}</p>
+          <p><span></span><small>Data acquired from {base}</small></p>
         </React.Fragment>
       ) }
       { error && <p>{error}</p> }
