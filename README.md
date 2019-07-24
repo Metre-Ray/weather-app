@@ -1,6 +1,18 @@
-## Project Not Ready!
+# Weather Search
+
+Helps to find out current weather in your city.
+
+Uses data from https://openweathermap.org .
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## How to run?
+
+1. Clone or download and unpack repository, go into its folder.
+2. Inside file src/App.js in variable API_KEY there is my API key for accessing data from site. Soon it will be deleted. So you need to replace it by yours. To acquire an api key you need to go to https://openweathermap.org/api and sign up. Then replace string in variable API_KEY with your key.
+3. Run `npm start`, go to http://localhost:3000 .
+
+Below you can read default info from create-react-app.
 
 ## Available Scripts
 
