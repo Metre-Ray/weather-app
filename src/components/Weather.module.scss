@@ -1,4 +1,13 @@
 .weather {
   text-align: left;
+
+  p::selection {
+    background: rgb(150, 122, 0);
+  }
 }
-::selection { background: yellow; }
+
+.label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: rgb(255, 255, 175);
+}

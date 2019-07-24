@@ -1,0 +1,58 @@
+$inputBackground: #343a40;
+$inputBorder: grey;
+$inputFocusColor: orange;
+
+.formContainer {
+  min-height: 300px;
+  margin: 10px;
+  background-color: rgb(36, 30, 30);
+}
+
+.input {
+  display: block;
+  width: 90%;
+  height: 30px;
+  margin: 5px;
+  padding-left: 5px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  outline: none;
+  background: $inputBackground;
+  color: white;
+}
+
+.input:active, .input:focus {
+  border: 1px solid $inputFocusColor;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border: 1px solid white;
+  outline: none;
+  background: none;
+  font-weight: bold;
+  color: white;
+  transition: all 0.3s linear;
+}
+
+.button:hover {
+  cursor: pointer;
+  color: $inputFocusColor;
+  border-color: $inputFocusColor;
+}
+
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover {
+  border: 1px solid $inputBorder;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px $inputBackground inset;
+}
+
+input:-webkit-autofill:focus {
+  border: 1px solid $inputFocusColor;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px $inputBackground inset;
+}

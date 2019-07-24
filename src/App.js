@@ -2,14 +2,19 @@ import React, { Component } from 'react'
 import Form from './components/Form';
 import Titles from './components/Titles';
 import Weather from './components/Weather';
-import storageService from './components/services/storageService';
+import storageService from './services/storageService';
 
 import './App.css';
 
-const API_KYE = '8bf768353480692e06febb4c621734e9';
-// const url = `https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=${API_KYE}`;
+
+// exposed on purpose
+const API_KYE = '8bf768353480692e06febb4c621734e9';   // change this with your key
+
+
 export default class App extends Component {
   state = {
+    defaultCity: undefined,
+    defaultCountry: undefined,
     tempreture: undefined,
     city: undefined,
     country: undefined,
@@ -43,7 +48,8 @@ export default class App extends Component {
       })
       return;
     }
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KYE}`;
+    const url =
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&APPID=${API_KYE}`;
     const api_call = await fetch(url);
     const data = await api_call.json();
     if (data.cod !== 200) {
@@ -80,23 +86,19 @@ export default class App extends Component {
 
   componentDidMount() {
     const [city, country] = storageService.getItems();
-    this.value1 = city;
-    this.value2 = country;
-    console.log('mount', this.value1);
+    this.setState({
+      defaultCity: city,
+      defaultCountry: country
+    });
   }
 
   render() {
     return (
       <div className="app">
-        <Titles></Titles>
-        <Form getWeather={this.getWeather} ></Form>
-        <Weather {...this.state}></Weather>
+        <Titles />
+        <Form getWeather={this.getWeather} value1={this.state.defaultCity} value2={this.state.defaultCountry} />
+        <Weather {...this.state} />
       </div>
     )
   }
 }
-
-// Задачи:
-// 1. стилизовать
-// 2. решить, куда поместить API ключ (может в базу firebase?? - но для доступа к ней
-// тоже нужен ключ; тогда на хероку?) - почитать

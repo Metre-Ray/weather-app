@@ -13,5 +13,5 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
-  box-shadow: 0 0 5px orange;
+  box-shadow: 0 0 5px rgb(255, 213, 135);
 }
