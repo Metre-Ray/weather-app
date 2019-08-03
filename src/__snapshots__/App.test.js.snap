@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`match mount snapshot 1`] = `
+<App>
+  <div
+    className="app"
+  >
+    <Titles>
+      <div
+        className="titlesContainer"
+      >
+        <h1>
+          Weather search
+        </h1>
+        <p>
+          Find out weather, temperature and other conditions
+        </p>
+      </div>
+    </Titles>
+    <Form
+      getWeather={[Function]}
+      value1={null}
+      value2={null}
+    >
+      <form
+        action=""
+        className="formContainer"
+        onSubmit={[Function]}
+      >
+        <input
+          className="input"
+          defaultValue={null}
+          name="city"
+          placeholder="City..."
+          type="text"
+        />
+        <input
+          className="input"
+          defaultValue={null}
+          name="country"
+          placeholder="Country..."
+          type="text"
+        />
+        <button
+          className="button"
+        >
+          Get Weather
+        </button>
+      </form>
+    </Form>
+    <Weather
+      defaultCity={null}
+      defaultCountry={null}
+    >
+      <div
+        className="weather"
+      />
+    </Weather>
+  </div>
+</App>
+`;
+
+exports[`match render snapshot 1`] = `
+<div
+  class="app"
+>
+  <div
+    class="titlesContainer"
+  >
+    <h1>
+      Weather search
+    </h1>
+    <p>
+      Find out weather, temperature and other conditions
+    </p>
+  </div>
+  <form
+    action=""
+    class="formContainer"
+  >
+    <input
+      class="input"
+      name="city"
+      placeholder="City..."
+      type="text"
+    />
+    <input
+      class="input"
+      name="country"
+      placeholder="Country..."
+      type="text"
+    />
+    <button
+      class="button"
+    >
+      Get Weather
+    </button>
+  </form>
+  <div
+    class="weather"
+  />
+</div>
+`;
+
+exports[`match shallow snapshot 1`] = `
+<div
+  className="app"
+>
+  <Titles />
+  <Form
+    getWeather={[Function]}
+    value1={null}
+    value2={null}
+  />
+  <Weather
+    defaultCity={null}
+    defaultCountry={null}
+  />
+</div>
+`;

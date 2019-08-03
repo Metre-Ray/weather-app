@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Titles match mount snapshot 1`] = `
+<Titles>
+  <div
+    className="titlesContainer"
+  >
+    <h1>
+      Weather search
+    </h1>
+    <p>
+      Find out weather, temperature and other conditions
+    </p>
+  </div>
+</Titles>
+`;
+
+exports[`Titles match render snapshot 1`] = `
+<div
+  class="titlesContainer"
+>
+  <h1>
+    Weather search
+  </h1>
+  <p>
+    Find out weather, temperature and other conditions
+  </p>
+</div>
+`;
+
+exports[`Titles match shallow snapshot 1`] = `
+<div
+  className="titlesContainer"
+>
+  <h1>
+    Weather search
+  </h1>
+  <p>
+    Find out weather, temperature and other conditions
+  </p>
+</div>
+`;
