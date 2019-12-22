@@ -2,11 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+register();
+
+/* eslint-disable */
+
+function register() {
+  if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('serviceWorkerCustom.js')
+        .then(registration => {
+          console.log('Service Worker is registered.');
+          const data = {
+            type: 'CACHE_URLS',
+            payload: [
+              location.href,
+              ...performance.getEntriesByType('resource').map((r) => r.name)
+            ]
+          };
+          if (registration.installing) {
+            registration.installing.postMessage(data);
+          };
+        })
+        .catch(err => {
+          console.error('Registration of service worker failed:', err);
+        });
+    });
+  }
+}

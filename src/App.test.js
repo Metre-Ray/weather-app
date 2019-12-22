@@ -4,7 +4,6 @@ import App from './App';
 import { shallow, render, mount } from 'enzyme';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import storageService from './services/storageService';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -40,5 +39,12 @@ it("setState should be called in componentDidMount one time", () => {
 
 it("mock storage service", () => {
   const inst = shallow(<App />).instance();
+  // const mockStorage = {
+  //   getItems: jest.fn(),
+  //   setItems: jest.fn(),
+  // }
+  // jest.mock('./services/storageService', () => mockStorage);
+  // inst.componentDidMount();
+  // expect(mockStorage.getItems).toHaveBeenCalled();
   // TODO
 });
