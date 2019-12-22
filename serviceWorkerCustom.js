@@ -1,10 +1,10 @@
 /* eslint-disable */
 
 const filesToCache = [
-  '/',
-  'index.html',
-  '404.html',
-  'offline.html',
+  './',
+  './index.html',
+  './404.html',
+  './offline.html',
 ];
 
 const staticCacheName = 'weather-search-cache';
