@@ -18,7 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 2. Inside file src/App.js in variable API_KEY there is my API key for accessing data from site. Soon it will be deleted. So you need to replace it by yours. To acquire an api key you need to go to https://openweathermap.org/api and sign up. Then replace string in variable API_KEY with your key.
 3. Run `npm run build`.
 4. Inside `build` folder: remove `service-worker.js`, put here `serviceWorkerCustom.js`, `offline.html`, `404.html` from `src` folder.
-5. Run `npm run start-sw`, go to http://localhost:8080 (service worker won't work, it works only in prod build).
+5. Run `npm run start-sw`, go to http://localhost:8080 (service worker will work).
 
 
 Below you can read the default info from create-react-app.
