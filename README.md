@@ -2,6 +2,8 @@
 
 Helps to find out current weather in your city.
 
+Check it on github pages: https://metre-ray.github.io/weather-app/ .
+
 Uses data from https://openweathermap.org .
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
